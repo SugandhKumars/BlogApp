@@ -1,6 +1,6 @@
 import React from "react";
 import Blogs from "../blogs.json";
-import { h3 } from "doker/lib/mixins/formatting";
+
 import { Link } from "react-router-dom";
 function Blog() {
   console.log(Blogs);
@@ -8,9 +8,9 @@ function Blog() {
     <>
       {Blogs.map((blog, i) => (
         <Link to={`/blog/${blog.name}`} key={i}>
-          <div className="border-2 rounded-lg self-center m-2 p-2 cursor-pointer">
+          <div className="border-2 rounded-lg self-center m-2 p-2 cursor-pointer w-[70%] mx-auto">
             <h3 className="font-bold text-2xl">{blog.heading}</h3>
-            <p className="text-wrap">{blog.Content}</p>
+            <p className="break-words">{blog.Content}</p>
           </div>
         </Link>
       ))}
